@@ -1,0 +1,104 @@
+/**
+* @author Vladimir Aguilar Corrales
+* Carn�: B50120
+* Curso: Programaci�n I
+* Profesora: Josefina Pujol
+*/
+import java.util.Random;
+
+public class Juego {
+ private final int _puntajeLimite=100;
+ private int _jug1;
+ private int _jug2;
+ private int _puntajeTmp;
+ private int _valorDado;
+ private int _turno;
+ private int _cantJugadas;
+ 
+ public Juego(){
+  reiniciarJuego();
+ }//Fin constructor Juego
+ 
+ public void reiniciarJuego(){
+  _jug1=0;
+  _jug2=0;
+  _turno=1;
+  _puntajeTmp=0;
+  _valorDado=0;
+  _cantJugadas=0;
+ }
+ 
+ public int tirarDado(){
+  Random rnd= new Random();
+  return (rnd.nextInt(6) + 1);
+ }//Fin tirarDado
+ 
+ 
+ public int jugar(){
+  _valorDado= tirarDado();
+  ++_cantJugadas;
+  if(_valorDado==1){
+   reiniciarTmp();
+  } else{
+   _puntajeTmp= _puntajeTmp + _valorDado;
+  }
+  return _valorDado;
+ }//Fin jugar
+ 
+ public void reiniciarTmp(){
+  _puntajeTmp=0;
+ }//Fin reiniciar Tmp
+ 
+ public void cambiarTurno(){
+  _cantJugadas=0;
+  if(_turno==1){
+   _jug1= _jug1+_puntajeTmp;
+   _turno=2;
+  } else
+  {
+   _jug2= _jug2+_puntajeTmp;
+   _turno=1;
+  } reiniciarTmp();
+ }//Fin cambiarTurno
+ 
+ public boolean verificarVictoria(int pPuntaje){
+  if(pPuntaje>=_puntajeLimite){
+   return true;
+  } else
+  {
+   return false;
+  }
+ }//Fin verificarVictoria
+ 
+ public int getValorDado(){
+  return _valorDado;
+ }//Fin getValorDado
+
+ public int getTurno(){
+  return _turno;
+ }//Fin getTurno
+ 
+ public int getPuntaje1(){
+  return _jug1;
+ }//Fin getPuntaje1
+ 
+ public int getPuntaje2(){
+  return _jug2;
+ }//Fin getPuntaje2
+ 
+ public int getPuntajeTmp(){
+  return _puntajeTmp;
+ }//Fin getPuntajeTmp
+ 
+ //Clase que decide si la m�quina continua o cambia de turno
+ public boolean decidirJuego(){
+  int diferencia= _jug2+_puntajeTmp-_jug1;
+  if(diferencia<=7 && _cantJugadas<4){
+   return true;
+  } else
+  {
+   return false;
+  }
+ }//Fin decidir juego
+ 
+}//Fin clase Juego
