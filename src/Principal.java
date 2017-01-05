@@ -4,6 +4,7 @@
 * Carne: B50120
 * Curso: Programacion I
 * Profesora: Josefina Pujol
+* II Semestre 2015
 */
 
 
@@ -26,7 +27,7 @@ public class Principal{
     /*Método devuelve la ruta donde se encuentran las imágenes
      *para no tener que estar cambiando la ubicación, probado en
      * Windows 7 y en Ubuntu 14.04, deja en consola la ubicación
-     * de donde deberían de estar las imágenes en caso de que no
+     * donde deberían de estar las imágenes en caso de que no
      * se encuentren automaticamente copiarlas en la dirección
      * solicitada
      */
@@ -41,7 +42,7 @@ public class Principal{
          else{
           ruta= miDir.getCanonicalPath()+"\\imagenes\\";
          }
-         System.out.println (sSistemaOperativo+" "+ruta);
+         //System.out.println (sSistemaOperativo+" "+ruta);
          return ruta;
         }
         catch(Exception e) {
