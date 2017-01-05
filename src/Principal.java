@@ -42,7 +42,7 @@ public class Principal{
          else{
           ruta= miDir.getCanonicalPath()+"\\imagenes\\";
          }
-         //System.out.println (sSistemaOperativo+" "+ruta);
+         System.out.println (sSistemaOperativo+" "+ruta);
          return ruta;
         }
         catch(Exception e) {
@@ -67,7 +67,7 @@ public class Principal{
         //Fin de creacion de la ventana
         
         String tipoLetra="Tahoma";
-
+		java.awt.Font letraPuntajes = new java.awt.Font("Tahoma", 1, 16); //Para unificar el tipo de letra en todos los labels de puntajes
         //Coordenadas sirven para colocar botones y otros elementos de interfaz
         int x1=anchoVentana/2-52;
         int base=110;
@@ -87,7 +87,7 @@ public class Principal{
         puntaje1TextField= new JTextField();
         puntaje1TextField.setText("0");
         puntaje1TextField.setBounds(x1, y1, base, altura);
-        puntaje1TextField.setFont(new java.awt.Font(tipoLetra, 1, 16)); 
+        puntaje1TextField.setFont(letraPuntajes); 
         puntaje1TextField.setEnabled(false);
         puntaje1TextField.setDisabledTextColor(Color.black);
         puntaje1TextField.setHorizontalAlignment(JTextField.CENTER);
@@ -96,7 +96,7 @@ public class Principal{
         puntaje1Label= new JLabel();
         puntaje1Label.setText("<html><p align="+"Center"+">Tus</p><p align="+"Center"+">Puntos</p></html>");//Se utiliza código HTML para centrar texto
         puntaje1Label.setBounds(x1+10, y1, base, altura);
-        puntaje1Label.setFont(new java.awt.Font(tipoLetra, 1, 16));
+        puntaje1Label.setFont(letraPuntajes);
 
         //TextField y Label del puntaje de la PC
         x1=anchoVentana-140;
@@ -104,7 +104,7 @@ public class Principal{
         puntaje2TextField= new JTextField();
         puntaje2TextField.setText("0");
         puntaje2TextField.setBounds(x1, y1, base, altura);
-        puntaje2TextField.setFont(new java.awt.Font(tipoLetra, 1, 16)); 
+        puntaje2TextField.setFont(letraPuntajes); 
         puntaje2TextField.setEnabled(false);
         puntaje2TextField.setDisabledTextColor(Color.black);
         puntaje2TextField.setHorizontalAlignment(JTextField.CENTER);
@@ -113,9 +113,8 @@ public class Principal{
         puntaje2Label= new JLabel();
         puntaje2Label.setText("<html><p align="+"Center"+">Puntos</p><p align="+"Center"+">CPU</p></html>");//Se utiliza código HTML para centrar texto
         puntaje2Label.setBounds(x1+10, y1, base, altura);
-        puntaje2Label.setFont(new java.awt.Font(tipoLetra, 1, 16));
+        puntaje2Label.setFont(letraPuntajes);
 
-        //TextField para el puntaje temporal
         
         //TextField del puntaje temporal
         x1=anchoVentana/2-40;
@@ -123,7 +122,7 @@ public class Principal{
         puntajeTemporalTextField= new JTextField();
         puntajeTemporalTextField.setText("0");
         puntajeTemporalTextField.setBounds(x1, y1, base, altura);
-        puntajeTemporalTextField.setFont(new java.awt.Font(tipoLetra, 1, 16)); 
+        puntajeTemporalTextField.setFont(letraPuntajes); 
         puntajeTemporalTextField.setEnabled(false);
         puntajeTemporalTextField.setDisabledTextColor(Color.black);
         puntajeTemporalTextField.setHorizontalAlignment(JTextField.CENTER);
